@@ -34,13 +34,15 @@ class SimpleRow extends shouldUpdater(eventDelegater(Component)) {
     const tabIndexStart = (this.props.rowIndex * visibleColumnSize) + 1;
 
     return (
-      <tr style={ style } className={ className } { ...trAttrs }>
-        <RowPureContent
-          shouldUpdate={ this.shouldUpdateRowContent }
-          tabIndexStart={ tabIndexCell ? tabIndexStart : -1 }
-          { ...rest }
-        />
-      </tr>
+      <a href={rest.row.replaceAll(" ", "").replace("Ten", "")}
+        <tr style={ style } className={ className } { ...trAttrs }>
+          <RowPureContent
+            shouldUpdate={ this.shouldUpdateRowContent }
+            tabIndexStart={ tabIndexCell ? tabIndexStart : -1 }
+            { ...rest }
+          />
+        </tr>
+      </a>
     );
   }
 }
